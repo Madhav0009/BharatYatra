@@ -1,0 +1,97 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bharat Yatra - Near Me</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="nearby">
+
+  <!-- ── Top bar ──────────────────────────────────────────────── -->
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Bharat Yatra home">
+        <span class="brand-mark">BY</span><span>Bharat Yatra</span>
+      </a>
+      <button class="menu-button" id="menuButton" type="button" aria-label="Open menu">Menu</button>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="index.html">Discover</a>
+        <a class="active" href="nearby.html">Near Me</a>
+        <a href="contribute.html">Share</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="ghost-button" href="login.html" id="loginLink">Login</a>
+        <a class="primary-button" href="register.html" id="registerLink">Register</a>
+        <button class="danger-button hidden" type="button" id="logoutBtn">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Main ─────────────────────────────────────────────────── -->
+  <main>
+    <section>
+      <div class="container">
+
+        <!-- Page header -->
+        <div class="page-header">
+          <div class="eyebrow">Near me</div>
+          <h1>Discover places around you.</h1>
+          <p>Allow location access, or enter latitude and longitude manually to find destinations within your travel radius.</p>
+        </div>
+
+        <!-- Location form -->
+        <div class="card form-grid">
+          <div class="grid cards-3">
+            <div class="field">
+              <label for="latInput">Latitude</label>
+              <input id="latInput" placeholder="12.9716">
+            </div>
+            <div class="field">
+              <label for="lonInput">Longitude</label>
+              <input id="lonInput" placeholder="77.5946">
+            </div>
+            <div class="field">
+              <label for="radiusInput">Radius km</label>
+              <input id="radiusInput" type="number" min="1" value="500">
+            </div>
+          </div>
+          <div class="button-row">
+            <button class="secondary-button" id="detectLocationBtn" type="button">Use My Location</button>
+            <button class="primary-button"   id="nearbyBtn"          type="button">Find Places</button>
+          </div>
+        </div>
+
+        <div style="height:18px"></div>
+        <div id="nearbyGrid" class="grid places-grid"></div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ── Footer ───────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Bharat Yatra</strong>
+        <p>Discover destinations, routes, stays, stories, and traveller memories across India.</p>
+      </div>
+      <div>
+        <span>Created by</span><strong>Madhav</strong>
+        <p>Contact: contact@bharatyatra.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/places.js"></script>
+  <script src="js/place-detail.js"></script>
+  <script src="js/contribute.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

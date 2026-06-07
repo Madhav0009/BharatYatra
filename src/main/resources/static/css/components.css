@@ -1,0 +1,337 @@
+﻿/* ============================================================
+   COMPONENTS.CSS — Bharat Yatra
+   Reusable UI components: buttons, cards, badges, toasts, etc.
+   ============================================================ */
+
+
+/* ── Eyebrow label ─────────────────────────────────────────── */
+.eyebrow {
+  color: var(--teal);
+  font-size: .78rem;
+  text-transform: uppercase;
+  font-weight: 950;
+  letter-spacing: .08em;
+  margin-bottom: 12px;
+}
+
+
+/* ── Button base — ALL buttons share this foundation ───────── */
+.icon-button,
+.ghost-button,
+.primary-button,
+.secondary-button,
+.danger-button {
+  min-height: 42px;
+  border-radius: var(--radius);
+  border: 1.5px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  font-size: .92rem;
+  font-weight: 850;
+  padding: 0 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: filter .18s, transform .18s, background .18s,
+              color .18s, border-color .18s;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+/* ── Primary — saffron gradient (Register, Search, Contribute) */
+.primary-button {
+  background: linear-gradient(135deg, var(--saffron), #d84565);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 12px 28px rgba(216, 69, 101, .24);
+}
+.primary-button:hover {
+  filter: brightness(.96);
+  transform: translateY(-1px);
+}
+
+/* ── Ghost — outlined dark (Login, Refresh) ────────────────── */
+.ghost-button {
+  background: #fff;
+  color: var(--ink);
+  border-color: var(--ink);
+}
+.ghost-button:hover,
+.icon-button:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+  background: #f7fffd;
+}
+
+/* ── Secondary — softer outlined                              */
+/*    Used for: Back to discover, Open map,                   */
+/*    Use My Location, Explore Near Me, hero Register         */
+.secondary-button {
+  background: #fff;
+  color: var(--ink);
+  border-color: var(--line);
+}
+.secondary-button:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+  background: #f7fffd;
+}
+
+/* ── Danger — Logout, destructive actions ──────────────────── */
+.danger-button {
+  background: #fff5f3;
+  border-color: #f2b8af;
+  color: var(--danger);
+}
+.danger-button:hover {
+  background: var(--danger);
+  color: #fff;
+  border-color: var(--danger);
+}
+
+/* Button row layout helper */
+.button-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+/* ── Cards & Panels ────────────────────────────────────────── */
+.status-card,
+.quick-card,
+.panel,
+.card {
+  background: rgba(255, 255, 255, .88);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 34px rgba(54, 39, 22, .08);
+  padding: 18px;
+}
+
+/* Card footer — price + action aligned left/right */
+.card-footer {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+
+/* ── Badge ─────────────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .18);
+  border: 1px solid rgba(255, 255, 255, .28);
+  padding: 5px 9px;
+  font-size: .76rem;
+  font-weight: 950;
+  color: inherit;
+}
+/* Light badge — used on white/light backgrounds */
+.badge.light {
+  background: var(--soft);
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+
+/* ── Place card ────────────────────────────────────────────── */
+.place-card {
+  min-height: 250px;
+  border: 0;
+  text-align: left;
+  overflow: hidden;
+  position: relative;
+  padding: 0;
+  color: #fff;
+  background: var(--ink);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.place-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 80px rgba(54, 39, 22, .2);
+}
+
+/* Background image layer */
+.place-art {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #1a2a3a;
+  transition: transform .4s ease;
+}
+.place-card:hover .place-art { transform: scale(1.05); }
+
+/* Dark gradient overlay for text readability */
+.place-art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, .84) 0%,
+    rgba(0, 0, 0, .42) 50%,
+    rgba(0, 0, 0, .10) 100%
+  );
+}
+
+/* Emoji — top right corner */
+.place-emoji {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-size: 2rem;
+  opacity: .92;
+  z-index: 2;
+  line-height: 1;
+}
+
+/* Text — pinned to bottom of card */
+.place-body {
+  position: relative;
+  z-index: 1;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 18px;
+}
+.place-body p {
+  margin: 0;
+  color: rgba(255, 255, 255, .84);
+}
+
+
+/* ── Empty & Notice states ─────────────────────────────────── */
+.empty,
+.notice {
+  border: 1px dashed #c8b8a4;
+  background: rgba(255, 255, 255, .72);
+  border-radius: var(--radius);
+  padding: 18px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.notice.error {
+  border-color: #f2b8af;
+  color: var(--danger);
+  background: #fff5f3;
+}
+.notice.ok {
+  border-color: #a8d5ba;
+  color: var(--green);
+  background: #f2fbf5;
+}
+
+
+/* ── Info list (key-value pairs e.g. Travel basics) ────────── */
+.info-list { display: grid; gap: 10px; }
+
+.info-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .9rem;
+}
+.info-line:last-child { border-bottom: 0; padding-bottom: 0; }
+.info-line strong { color: var(--ink); text-align: right; }
+
+
+/* ── Toast notifications ───────────────────────────────────── */
+.toast-wrap {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 50;
+  display: grid;
+  gap: 10px;
+  width: min(360px, calc(100% - 32px));
+}
+.toast {
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  background: var(--ink);
+  color: #fff;
+  box-shadow: var(--shadow);
+  line-height: 1.45;
+}
+.toast.error { background: var(--danger); }
+.toast.ok    { background: var(--green);  }
+
+/* ── Secondary button ──────────────────────────────────────── */
+.secondary-button {
+  min-height: 42px;
+  border-radius: var(--radius);
+  border: 1.5px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  font-size: .92rem;
+  font-weight: 850;
+  padding: 0 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  line-height: 1;
+  transition: border-color .18s, color .18s, background .18s;
+}
+.secondary-button:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+  background: #f7fffd;
+}
+
+/* ── Fix ghost-button border to be more visible ────────────── */
+.ghost-button {
+  border-color: var(--ink) !important;
+}
+
+.secondary-button {
+  min-height: 42px;
+  border-radius: var(--radius);
+  border: 1.5px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  font-size: .92rem;
+  font-weight: 850;
+  padding: 0 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  line-height: 1;
+  transition: border-color .18s, color .18s, background .18s;
+}
+.secondary-button:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+  background: #f7fffd;
+}
+.ghost-button {
+  border-color: var(--ink) !important;
+}

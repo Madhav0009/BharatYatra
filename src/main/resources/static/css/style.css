@@ -1,0 +1,28 @@
+﻿@import url("base.css");
+@import url("layout.css");
+@import url("components.css");
+@import url("forms.css");
+@import url("pages.css");
+@import url("responsive.css");
+
+/* ── Fix button text vertical alignment globally ── */
+.ghost-button,
+.primary-button,
+.secondary-button,
+.danger-button {
+  line-height: 1 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  vertical-align: middle !important;
+  box-sizing: border-box !important;
+}
+
+/* Fix anchor tags used as buttons */
+a.ghost-button,
+a.primary-button,
+a.secondary-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+}

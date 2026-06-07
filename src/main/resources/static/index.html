@@ -1,0 +1,204 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bharat Yatra - Explore India</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── Hero visual ───────────────────────────────────────────── */
+    .hero-visual {
+      background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80') !important;
+      background-size: cover !important;
+      background-position: center !important;
+      position: relative !important;
+    }
+    .hero-visual .sun { display: none !important; }
+    .hero-visual .route-line { display: none !important; }
+    .hero-visual-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.65) 0%, rgba(0,0,0,.25) 60%, rgba(0,0,0,.10) 100%);
+      border-radius: inherit;
+    }
+    .hero-visual .monument {
+      position: absolute !important;
+      bottom: 32px !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      z-index: 2 !important;
+      font-size: 3.2rem !important;
+      font-weight: 900 !important;
+      color: #fff !important;
+      text-shadow: 0 2px 16px rgba(0,0,0,.5) !important;
+      white-space: nowrap !important;
+    }
+
+    /* ── Unified button base ───────────────────────────────────── */
+    .primary-button,
+    .ghost-button,
+    .secondary-button,
+    .danger-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.55rem 1.35rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+      border-radius: 8px;
+      border: 2px solid transparent;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s, border-color 0.18s, opacity 0.18s;
+      white-space: nowrap;
+      line-height: 1.4;
+    }
+
+    /* Primary — red filled (Register, Search, Login CTA) */
+    .primary-button {
+      background: #e8412a;
+      color: #fff !important;
+      border-color: #e8412a;
+    }
+    .primary-button:hover { background: #c7341f; border-color: #c7341f; }
+
+    /* Ghost — outlined dark (Login link, Refresh, nav actions) */
+    .ghost-button {
+      background: transparent;
+      color: #1a1a1a !important;
+      border-color: #1a1a1a;
+    }
+    .ghost-button:hover { background: #1a1a1a; color: #fff !important; }
+
+    /* Secondary — outlined warm-grey (hero secondary actions) */
+    .secondary-button {
+      background: transparent;
+      color: #444 !important;
+      border-color: #aaa;
+    }
+    .secondary-button:hover { background: #444; color: #fff !important; border-color: #444; }
+
+    /* Danger — for Logout / destructive actions */
+    .danger-button {
+      background: #e8412a;
+      color: #fff !important;
+      border-color: #e8412a;
+    }
+    .danger-button:hover { background: #c7341f; border-color: #c7341f; }
+
+    /* Hero action row spacing */
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+  </style>
+</head>
+<body data-page="index">
+
+  <!-- ── Top bar ──────────────────────────────────────────────── -->
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Bharat Yatra home">
+        <span class="brand-mark">BY</span><span>Bharat Yatra</span>
+      </a>
+
+      <button class="menu-button" id="menuButton" type="button" aria-label="Open menu">Menu</button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a class="active" href="index.html">Discover</a>
+        <a href="nearby.html">Near Me</a>
+        <a href="contribute.html">Share</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="ghost-button"   href="login.html"    id="loginLink">Login</a>
+        <a class="primary-button" href="register.html" id="registerLink">Register</a>
+        <button class="danger-button hidden" type="button" id="logoutBtn">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Main ─────────────────────────────────────────────────── -->
+  <main>
+
+    <!-- Hero -->
+    <section class="hero-section">
+      <div class="container hero">
+
+        <div class="hero-copy">
+          <div class="eyebrow">Incredible India, planned beautifully</div>
+          <h1>Find your next unforgettable journey.</h1>
+          <p>Explore popular destinations, discover nearby places, compare travel routes, book stays, read stories, and share your own travel memories.</p>
+
+          <form class="search-shell" id="searchForm">
+            <input id="searchInput" autocomplete="off"
+                   placeholder="Search by destination, state, or travel type"
+                   aria-label="Search destinations">
+            <button class="primary-button" type="submit">Search</button>
+            <div class="suggestions hidden" id="suggestions"></div>
+          </form>
+
+          <!-- Hero CTA buttons — secondary style, no red background -->
+          <div class="hero-actions">
+            <a class="secondary-button" href="nearby.html">Explore Near Me</a>
+            <a class="secondary-button" href="register.html">Register</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-visual-overlay"></div>
+          <div class="sun"></div>
+          <div class="monument">भारत</div>
+          <div class="route-line"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Popular destinations -->
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Featured escapes</div>
+            <h2>Popular destinations</h2>
+            <p>Handpicked places loved by travellers.</p>
+          </div>
+          <button class="ghost-button" id="refreshPopularBtn" type="button">Refresh</button>
+        </div>
+        <div id="placesGrid" class="grid places-grid"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ───────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Bharat Yatra</strong>
+        <p>Discover destinations, routes, stays, stories, and traveller memories across India.</p>
+      </div>
+      <div>
+        <span>Created by</span>
+        <strong>Madhav</strong>
+        <p>Contact: contact@bharatyatra.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+
+  <!-- ── Scripts ──────────────────────────────────────────────── -->
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/places.js"></script>
+  <script src="js/place-detail.js"></script>
+  <script src="js/contribute.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

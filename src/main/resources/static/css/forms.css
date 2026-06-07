@@ -1,0 +1,14 @@
+﻿label { color: var(--muted); font-size: .78rem; font-weight: 900; text-transform: uppercase; }
+input, textarea, select { width: 100%; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; color: var(--ink); padding: 11px 12px; outline: 0; }
+textarea { min-height: 110px; resize: vertical; }
+input:focus, textarea:focus, select:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(8,127,122,.12); }
+.field { display: grid; gap: 6px; }
+.form-grid { display: grid; gap: 12px; }
+.two-col { grid-template-columns: repeat(2, minmax(0,1fr)); }
+.search-shell { margin-top: 24px; display: grid; grid-template-columns: 1fr auto; gap: 8px; padding: 8px; border: 1px solid var(--line); background: #fff; border-radius: var(--radius); position: relative; }
+.search-shell input { border: 0; box-shadow: none; padding: 0 12px; }
+.suggestions { position: absolute; top: calc(100% + 8px); left: 0; right: 0; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; z-index: 15; }
+.suggestion { width: 100%; border: 0; background: #fff; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+.suggestion:hover { background: var(--soft); }
+.api-config { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+.auth-card { width: min(540px, 100%); margin: 0 auto; }

@@ -1,0 +1,44 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bharat Yatra - Register</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="register">
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Bharat Yatra home"><span class="brand-mark">BY</span><span>Bharat Yatra</span></a>
+      <button class="menu-button" id="menuButton" type="button" aria-label="Open menu">Menu</button>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a class="" href="index.html">Discover</a>
+        <a class="" href="nearby.html">Near Me</a>
+        <a class="" href="contribute.html">Share</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="ghost-button active" href="login.html" id="loginLink">Login</a>
+        <a class="primary-button" href="register.html" id="registerLink">Register</a>
+        <button class="danger-button hidden" type="button" id="logoutBtn">Logout</button>
+      </div>
+    </div>
+  </header>
+  <main><section><div class="container auth-layout"><div class="auth-intro"><div class="eyebrow">Join Bharat Yatra</div><h1>Start sharing your India story.</h1><p>Create a traveller account to add reviews, guides, and media to your favourite destinations.</p></div><form class="card auth-card form-grid" id="registerForm"><h2>Create account</h2><div class="field"><label for="registerName">Full name</label><input id="registerName" required autocomplete="name"></div><div class="field"><label for="registerEmail">Email</label><input id="registerEmail" type="email" required autocomplete="email"></div><div class="field"><label for="registerPassword">Password</label><input id="registerPassword" type="password" minlength="6" required autocomplete="new-password"></div><div class="field"><label for="registerCity">City</label><input id="registerCity" placeholder="Bengaluru"></div><button class="primary-button" type="submit">Create account</button><a class="ghost-button" href="login.html">Already registered?</a></form></div></section></main>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><strong>Bharat Yatra</strong><p>Discover destinations, routes, stays, stories, and traveller memories across India.</p></div>
+      <div><span>Created by</span><strong>Madhav</strong><p>Contact: contact@bharatyatra.com</p></div>
+    </div>
+  </footer>
+  <div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/places.js"></script>
+  <script src="js/place-detail.js"></script>
+  <script src="js/contribute.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
+
