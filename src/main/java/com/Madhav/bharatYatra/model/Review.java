@@ -24,9 +24,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-//══════════════════════════════════════════
+
 //REVIEW
-//══════════════════════════════════════════
+
 @Entity
 @Table(name = "reviews")
 @EntityListeners(AuditingEntityListener.class)
@@ -53,7 +53,7 @@ public class Review {
  private String comment;
 
  @Column
- private String visitDate;   // e.g. "March 2025"
+ private String visitDate;  
 
  @CreatedDate
  @Column(updatable = false)

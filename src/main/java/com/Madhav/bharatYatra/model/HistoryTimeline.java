@@ -15,9 +15,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-//══════════════════════════════════════════
+
 //HISTORY TIMELINE
-//══════════════════════════════════════════
+
 @Entity
 @Table(name = "history_timeline")
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder

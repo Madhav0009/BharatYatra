@@ -21,9 +21,9 @@ import com.Madhav.bharatYatra.service.MediaService;
 
 import lombok.RequiredArgsConstructor;
 
-//══════════════════════════════════════════════════════
+
 //MEDIA CONTROLLER  →  /api/media
-//══════════════════════════════════════════════════════
+
 @RestController
 @RequestMapping("/api/media")
 @RequiredArgsConstructor

@@ -5,7 +5,7 @@ import java.util.List;
 import lombok.Builder;
 import lombok.Data;
 
-//══ SEARCH ════════════════════════════════════════════
+//══ SEARCH ══════
     
 @Data @Builder
 public class SearchResponse {  

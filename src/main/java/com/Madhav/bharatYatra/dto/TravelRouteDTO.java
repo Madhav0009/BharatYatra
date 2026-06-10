@@ -3,7 +3,7 @@ package com.Madhav.bharatYatra.dto;
 import lombok.Builder;
 import lombok.Data;
 
-//══ TRAVEL ROUTE ══════════════════════════════════════
+//══ TRAVEL ROUTE ════════
 
 @Data @Builder
 public class TravelRouteDTO {

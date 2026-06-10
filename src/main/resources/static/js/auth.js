@@ -1,8 +1,6 @@
 ﻿var BY = window.BY || (window.BY = {});
 
-/* =========================
-   LOGIN
-========================= */
+/*  LOGIN */
 
 BY.initLoginPage = function () {
   const form = document.getElementById("loginForm");
@@ -39,9 +37,7 @@ BY.initLoginPage = function () {
   });
 };
 
-/* =========================
-   REGISTER
-========================= */
+/* REGISTER */
 
 BY.initRegisterPage = function () {
   const form = document.getElementById("registerForm");
@@ -77,9 +73,7 @@ BY.initRegisterPage = function () {
   });
 };
 
-/* =========================
-   FORGOT PASSWORD APIs
-========================= */
+// FORGOT PASSWORD APIs 
 
 BY.sendOtp = (email) =>
   BY.request(`/api/auth/send-otp?email=${encodeURIComponent(email)}`, { method: "POST" });
@@ -90,9 +84,8 @@ BY.verifyOtp = (email, otp) =>
 BY.resetPassword = (email, pass) =>
   BY.request(`/api/auth/reset-password?email=${encodeURIComponent(email)}&newPassword=${encodeURIComponent(pass)}`, { method: "POST" });
 
-/* =========================
-   STEP 1: FORGOT PASSWORD
-========================= */
+//  FORGOT PASSWORD
+
 
 BY.initForgotPasswordPage = function () {
   const form = document.getElementById("forgotForm");
@@ -126,9 +119,8 @@ BY.initForgotPasswordPage = function () {
   });
 };
 
-/* =========================
-   STEP 2: VERIFY OTP
-========================= */
+// VERIFY OTP
+
 
 BY.initVerifyOtpPage = function () {
   const form = document.getElementById("otpForm");
@@ -164,9 +156,8 @@ BY.initVerifyOtpPage = function () {
   });
 };
 
-/* =========================
-   STEP 3: RESET PASSWORD
-========================= */
+//  RESET PASSWORD
+
 
 BY.initResetPasswordPage = function () {
   const form = document.getElementById("resetForm");

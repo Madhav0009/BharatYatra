@@ -118,7 +118,6 @@ public class GlobalExceptionHandler {
     }
     
 
-	 // ✅ Add this handler to ignore missing static resources
 	 @ExceptionHandler(NoResourceFoundException.class)
 	 public ResponseEntity<Void> handleNoResourceFound(NoResourceFoundException ex) {
 	     return ResponseEntity.notFound().build(); // 404, not 500

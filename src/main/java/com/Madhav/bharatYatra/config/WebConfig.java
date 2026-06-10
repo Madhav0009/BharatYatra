@@ -3,9 +3,9 @@ package com.Madhav.bharatYatra.config;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 
-//──────────────────────────────────────────
+
 //STATIC FILE SERVING (for uploaded media)
-//──────────────────────────────────────────
+
 @Configuration
 public class WebConfig implements org.springframework.web.servlet.config.annotation.WebMvcConfigurer {
 

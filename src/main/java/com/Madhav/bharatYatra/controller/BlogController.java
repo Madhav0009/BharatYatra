@@ -23,9 +23,8 @@ import lombok.RequiredArgsConstructor;
 
 
 
-//══════════════════════════════════════════════════════
 //BLOG CONTROLLER  →  /api/blogs
-//══════════════════════════════════════════════════════
+
 @RestController
 @RequestMapping("/api/blogs")
 @RequiredArgsConstructor
@@ -34,22 +33,11 @@ public class BlogController {
 
  private final BlogService blogService;
 
-// @PostMapping
-// public ResponseEntity<BlogDTO> createBlog(
-//         @Valid @RequestBody BlogRequest req,
-//         @AuthenticationPrincipal UserDetails user) {
-//
-//     System.out.println("========== BLOG HIT ==========");
-//     System.out.println(req);
-//     System.out.println(user);
-//
-//     return ResponseEntity.status(HttpStatus.CREATED)
-//             .body(blogService.createBlog(req, user.getUsername()));
-// }
+
  
- /**
-  * GET /api/blogs/place/{placeId}?page=0&size=10
-  */
+ 
+ // GET /api/blogs/place/{placeId}?page=0&size=10
+  
  @GetMapping("/place/{placeId}")
  public ResponseEntity<Page<BlogDTO>> getBlogsForPlace(
          @PathVariable Long placeId,
@@ -58,10 +46,8 @@ public class BlogController {
      return ResponseEntity.ok(blogService.getBlogsForPlace(placeId, page, size));
  }
 
- /**
-  * POST /api/blogs
-  * Requires JWT auth
-  */
+ // POST /api/blogs   Requires JWT auth
+  
  @PostMapping
  public ResponseEntity<BlogDTO> createBlog(
          @Valid @RequestBody BlogRequest req,
@@ -69,17 +55,6 @@ public class BlogController {
      return ResponseEntity.status(HttpStatus.CREATED)
          .body(blogService.createBlog(req, user.getUsername()));
  }
-// @PostMapping
-// public ResponseEntity<BlogDTO> createBlog(
-//         @Valid @RequestBody BlogRequest req,
-//         @AuthenticationPrincipal UserDetails user) {
-//
-//     System.out.println("=========== BLOG HIT ===========");
-//     System.out.println("USER = " + user);
-//     System.out.println("PLACE ID = " + req.getPlaceId());
-//
-//     return ResponseEntity.status(HttpStatus.CREATED)
-//             .body(blogService.createBlog(req, user.getUsername()));
-// }
+
 }
 

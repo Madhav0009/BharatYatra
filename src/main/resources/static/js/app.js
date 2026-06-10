@@ -1,12 +1,5 @@
 ﻿var BY = window.BY || (window.BY = {});
 
-/* ============================================================
-   APP.JS — Bharat Yatra
-   Core UI functions and page initialisation.
-   app.js loads LAST so it must not redefine things set in ui.js
-   ============================================================ */
-
-
 /* ── Nav update — show/hide Login, Register, Logout ────────── */
 BY.updateNav = function () {
   const token        = localStorage.getItem("bharatYatra.token");
@@ -80,12 +73,9 @@ BY.requireLogin = function () {
   return true;
 };
 
-/* ============================================================
-   PAGE INITIALISATION
-   ============================================================ */
+/*PAGE INITIALISATION */
 document.addEventListener("DOMContentLoaded", () => {
-
-  /* Always update nav */
+	
   BY.updateNav();
 
   /* Global listeners */

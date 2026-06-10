@@ -22,9 +22,9 @@ import com.Madhav.bharatYatra.service.ReviewService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
-//══════════════════════════════════════════════════════
+
 //REVIEW CONTROLLER  →  /api/reviews
-//══════════════════════════════════════════════════════
+
 @RestController
 @RequestMapping("/api/reviews") 
 @RequiredArgsConstructor
@@ -33,9 +33,8 @@ public class ReviewController {
 
  private final ReviewService reviewService;
  
- /**
-  * GET /api/reviews/place/{placeId}?page=0&size=10
-  */
+ /*  GET /api/reviews/place/{placeId}?page=0&size=10 */
+ 
  @GetMapping("/place/{placeId}")
  public ResponseEntity<Page<ReviewDTO>> getReviews(
          @PathVariable Long placeId,
@@ -44,10 +43,9 @@ public class ReviewController {
      return ResponseEntity.ok(reviewService.getReviews(placeId, page, size));
  }
 
- /**
-  * POST /api/reviews
-  * Requires JWT auth
-  */
+ /* POST /api/reviews
+    Requires JWT auth  */
+ 
  @PostMapping
  public ResponseEntity<ReviewDTO> addReview(
          @Valid @RequestBody ReviewRequest req,
@@ -56,10 +54,9 @@ public class ReviewController {
          .body(reviewService.addReview(req, user.getUsername()));
  }
 
- /**
-  * DELETE /api/reviews/{id}
-  * Only the review author can delete
-  */
+ /*  DELETE /api/reviews/{id}
+      Only the review author can delete  */
+ 
  @DeleteMapping("/{id}")
  public ResponseEntity<Void> deleteReview(
          @PathVariable Long id,

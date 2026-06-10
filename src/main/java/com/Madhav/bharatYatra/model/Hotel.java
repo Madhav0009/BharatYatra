@@ -18,9 +18,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-//══════════════════════════════════════════
+
 //HOTEL
-//══════════════════════════════════════════
+
 @Entity
 @Table(name = "hotels")
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
@@ -48,5 +48,5 @@ public class Hotel {
 
  private String bgGradient;
 
- private String bookingUrl;   // MakeMyTrip / direct link
+ private String bookingUrl;  
 }

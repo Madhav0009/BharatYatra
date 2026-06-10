@@ -1,13 +1,8 @@
 ﻿var BY = window.BY || (window.BY = {});
 
-/* ─────────────────────────────────────────────
-   DATE / TIME
-───────────────────────────────────────────── */
+// DATE / TIME
 
-/**
- * Formats an ISO date string into a human-readable format.
- * e.g. "2026-06-02T19:47:26.344129" → "2 June 2026, 7:47 PM"
- */
+
 BY.formatDateTime = function (dateString) {
   if (!dateString) return "";
 
@@ -21,10 +16,7 @@ BY.formatDateTime = function (dateString) {
   });
 };
 
-
-/* ─────────────────────────────────────────────
-   PLACE LOADING
-───────────────────────────────────────────── */
+//   PLACE LOADING
 
 BY.loadPlace = async function (id) {
   const mount = document.getElementById("detailMount");
@@ -63,10 +55,7 @@ BY.loadPlace = async function (id) {
   }
 };
 
-
-/* ─────────────────────────────────────────────
-   PLACE RENDER
-───────────────────────────────────────────── */
+//   PLACE RENDER
 
 BY.renderPlaceDetail = function (p) {
   const titleEl    = document.getElementById("placeTitle");
@@ -206,10 +195,7 @@ BY.activateTab = function (tab) {
   );
 };
 
-
-/* ─────────────────────────────────────────────
-   TAB PANEL RENDERERS
-───────────────────────────────────────────── */
+   // TAB PANEL RENDERERS
 
 BY.renderOverview = function (p) {
   const timelineHtml = (p.timeline || []).length
@@ -336,11 +322,7 @@ BY.renderFacilities = function (facilities) {
   `;
 };
 
-
-/* ─────────────────────────────────────────────
-   ASYNC DATA LOADERS
-───────────────────────────────────────────── */
-
+   // ASYNC DATA LOADERS
 BY.loadReviews = async function (id) {
   const mount = document.getElementById("reviewsMount");
   if (!mount) return;
@@ -444,11 +426,8 @@ BY.loadMedia = async function (id) {
   }
 };
 
-
-/* ─────────────────────────────────────────────
-   ACTIONS
-───────────────────────────────────────────── */
-
+ //  ACTIONS
+ 
 BY.deleteReview = async function (id) {
   if (!BY.requireLogin()) return;
 

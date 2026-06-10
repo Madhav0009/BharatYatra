@@ -3,7 +3,7 @@ package com.Madhav.bharatYatra.dto;
 import lombok.Builder;
 import lombok.Data;
 
-//══ FACILITY ══════════════════════════════════════════
+//══ FACILITY ════
 
 @Data @Builder
 public class FacilityDTO {

@@ -33,7 +33,6 @@ public class JwtAuthFilter extends OncePerRequestFilter {
 
         String header = request.getHeader("Authorization");
 
-        // ✅ Skip if no Bearer token present
         if (header == null || !header.startsWith("Bearer ")) {
             chain.doFilter(request, response);
             return;
@@ -42,11 +41,9 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         String token = header.substring(7);
 
         try {
-            // ✅ Validate first, then extract
             if (jwtUtils.validateToken(token)) {
                 String email = jwtUtils.extractEmail(token);
 
-                // ✅ Only set auth if not already authenticated
                 if (email != null &&
                     SecurityContextHolder.getContext().getAuthentication() == null) {
 
@@ -64,25 +61,32 @@ public class JwtAuthFilter extends OncePerRequestFilter {
                         new WebAuthenticationDetailsSource()
                             .buildDetails(request)
                     );
-
-                    // ✅ THIS sets the user as authenticated
+                    
                     SecurityContextHolder.getContext()
                         .setAuthentication(authToken);
 
                     log.debug("Authenticated user: {}", email);
                 }
             } else {
-                // ✅ Now you'll see exactly why validation failed
                 log.warn("Token validation failed for request: {}",
                     request.getRequestURI());
             }
 
         } catch (Exception e) {
-            // ✅ Never silently swallow — always log the real cause
-            log.error("JWT Filter error [{}]: {}",
-                e.getClass().getSimpleName(), e.getMessage());
-        }
 
+            log.error("JWT Filter error [{}]: {}",
+                    e.getClass().getSimpleName(),
+                    e.getMessage());
+
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            response.setContentType("application/json");
+
+            response.getWriter().write(
+                "{\"message\":\"Session expired. Please login again.\"}"
+            );
+
+            return;
+        }
         chain.doFilter(request, response);
     }
 }

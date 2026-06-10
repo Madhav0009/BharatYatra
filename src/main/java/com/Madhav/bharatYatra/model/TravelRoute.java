@@ -4,9 +4,8 @@ import jakarta.persistence.*;
 
 import lombok.*;
 
-// ══════════════════════════════════════════
 // TRAVEL ROUTE (from city → place)
-// ══════════════════════════════════════════
+
 
 @Entity
 @Table(name = "travel_routes")

@@ -16,9 +16,9 @@ import com.Madhav.bharatYatra.service.AuthService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
-//══════════════════════════════════════════════════════
+
 //AUTH CONTROLLER  →  /api/auth
-//══════════════════════════════════════════════════════
+
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
@@ -27,14 +27,14 @@ public class AuthController {
 
  private final AuthService authService;
 
- /** POST /api/auth/register */
+ // POST /api/auth/register 
  
  @PostMapping("/register")
  public ResponseEntity<AuthResponse> register(@Valid @RequestBody RegisterRequest req) {
      return ResponseEntity.status(HttpStatus.CREATED).body(authService.register(req));
  }
 
- /** POST /api/auth/login */
+ // POST /api/auth/login
  
  @PostMapping("/login")
  public ResponseEntity<AuthResponse> login(@Valid @RequestBody LoginRequest req) {

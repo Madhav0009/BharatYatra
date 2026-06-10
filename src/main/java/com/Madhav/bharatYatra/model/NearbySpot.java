@@ -18,9 +18,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-//══════════════════════════════════════════
+
 //NEARBY SPOT
-//══════════════════════════════════════════
+
 @Entity
 @Table(name = "nearby_spots")
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
@@ -37,8 +37,7 @@ public class NearbySpot {
  private String name;
 
  @Enumerated(EnumType.STRING)
- private SpotType type;    // HOSPITAL, BUS_STAND, RAILWAY, AIRPORT, FOOD, HOTEL, FUEL, ATTRACTION
-
+ private SpotType type;   
  private String distanceKm;
  private String description;
  private String bookingUrl;

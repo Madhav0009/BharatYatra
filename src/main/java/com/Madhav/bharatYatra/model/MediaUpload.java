@@ -26,9 +26,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-// ══════════════════════════════════════════
+
 // MEDIA UPLOAD (Photos & Videos)
-// ══════════════════════════════════════════
+
 
 @Entity
 @Table(name = "media_uploads")

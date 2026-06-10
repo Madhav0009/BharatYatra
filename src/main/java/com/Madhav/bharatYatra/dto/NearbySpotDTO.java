@@ -3,7 +3,7 @@ package com.Madhav.bharatYatra.dto;
 import lombok.Builder;
 import lombok.Data;
 
-//══ NEARBY SPOT ═══════════════════════════════════════
+//══ NEARBY SPOT ══════
 
 @Data @Builder
 public class NearbySpotDTO {

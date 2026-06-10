@@ -15,9 +15,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-//══════════════════════════════════════════
+
 //FACILITY
-//══════════════════════════════════════════
+
 @Entity
 @Table(name = "facilities")
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
@@ -36,5 +36,5 @@ public class Facility {
  @Column(columnDefinition = "TEXT")
  private String description;
 
- private String tag;   // e.g. "Open Daily", "Free", "₹50–200/day"
+ private String tag;  
 }

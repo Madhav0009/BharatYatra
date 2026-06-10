@@ -35,7 +35,7 @@ public class TouristPlace {
     private String tagline;
 
     @Enumerated(EnumType.STRING)
-    private PlaceType type;         // HERITAGE, BEACH, SPIRITUAL, ADVENTURE, etc.
+    private PlaceType type;        
 
     @Column(columnDefinition = "TEXT")
     private String description;
@@ -44,7 +44,7 @@ public class TouristPlace {
     private String descriptionExtra;
 
     @Column
-    private String bgGradient;      // CSS gradient for UI
+    private String bgGradient;     
 
     // Location
     @Column(nullable = false)

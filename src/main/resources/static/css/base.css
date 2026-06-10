@@ -1,27 +1,21 @@
-﻿/* ============================================================
-   BASE.CSS — Bharat Yatra
-   CSS custom properties, resets, typography, and global rules.
-   ============================================================ */
-
-
-/* ── Design tokens ─────────────────────────────────────────── */
+﻿/* ── Design tokens ─────────────────────────────────────────── */
 :root {
   /* Colours */
-  --ink:      #18202f;   /* Primary text */
-  --muted:    #667085;   /* Secondary / placeholder text */
-  --line:     #e5d8c8;   /* Borders, dividers */
-  --paper:    #fffaf2;   /* Page background warm */
-  --panel:    #ffffff;   /* Card / panel background */
-  --soft:     #fff3df;   /* Light tint for badges */
+  --ink:      #18202f;   
+  --muted:    #667085;   
+  --line:     #e5d8c8;  
+  --paper:    #fffaf2;   
+  --panel:    #ffffff;   
+  --soft:     #fff3df;  
 
   /* Brand palette */
-  --saffron:  #f26a21;   /* Primary accent */
-  --marigold: #ffc857;   /* Secondary accent */
-  --teal:     #087f7a;   /* Links, hover states */
-  --blue:     #2457a6;   /* Info / link alternative */
-  --rose:     #c03559;   /* Gradient end on primary button */
-  --green:    #38763d;   /* Success states */
-  --danger:   #b42318;   /* Error / destructive */
+  --saffron:  #f26a21;   
+  --marigold: #ffc857;  
+  --teal:     #087f7a;   
+  --blue:     #2457a6;   
+  --rose:     #c03559;   
+  --green:    #38763d;   
+  --danger:   #b42318; 
 
   /* Elevation & shape */
   --shadow: 0 24px 70px rgba(54, 39, 22, .16);

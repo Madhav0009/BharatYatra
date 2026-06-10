@@ -64,7 +64,7 @@ public class SecurityConfig {
 
                         .requestMatchers(
                         	    HttpMethod.GET,
-                        	    "/api/destinations/**",   // ← ADD THIS
+                        	    "/api/destinations/**",   
                         	    "/api/places/**",
                         	    "/api/reviews/**",
                         	    "/api/blogs/**",
@@ -126,9 +126,9 @@ public class SecurityConfig {
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {
 
-        DaoAuthenticationProvider provider = new DaoAuthenticationProvider(); // ✅ no-arg constructor
+        DaoAuthenticationProvider provider = new DaoAuthenticationProvider(); 
 
-        provider.setUserDetailsService(userDetailsService); // ✅ set separately
+        provider.setUserDetailsService(userDetailsService); 
         provider.setPasswordEncoder(passwordEncoder());
 
         return provider;

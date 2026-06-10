@@ -1,8 +1,5 @@
 ﻿var BY = window.BY || (window.BY = {});
 
-/* ============================================================
-   UI UTILITIES
-   ============================================================ */
 
 /* ── Escape HTML — prevent XSS ────────────────────────────── */
 BY.escapeHtml = function (value) {
@@ -66,10 +63,7 @@ BY.updateNav = function () {
   }
 };
 
-/* ============================================================
-   PAGE INITIALISATION
-   Runs after DOM is ready — routes to the correct page init
-   ============================================================ */
+
 document.addEventListener("DOMContentLoaded", () => {
 
   /* Always update nav on every page */

@@ -4,7 +4,7 @@ import lombok.Builder;
 import lombok.Data;
 
 
-//══ PLACE ═════════════════════════════════════════════
+//══ PLACE ════════
 
 
 @Data @Builder

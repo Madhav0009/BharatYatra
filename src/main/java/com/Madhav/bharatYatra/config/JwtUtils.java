@@ -18,28 +18,28 @@ public class JwtUtils {
     @Value("${app.jwt.expiration-ms}")
     private long jwtExpirationMs;
 
-    // ✅ Generate token using NEW API
+    // Generate token using NEW API
     public String generateToken(String email) {
         return Jwts.builder()
             .subject(email)                    
-            .issuedAt(new Date())              // ✅ was setIssuedAt() — deprecated
-            .expiration(new Date(             // ✅ was setExpiration() — deprecated
+            .issuedAt(new Date())              // was setIssuedAt() — deprecated
+            .expiration(new Date(             //was setExpiration() — deprecated
                 System.currentTimeMillis() + jwtExpirationMs))
-            .signWith(getKey())               // ✅ algorithm auto-detected from key
+            .signWith(getKey())               //algorithm auto-detected from key
             .compact();
     }
 
     // ✅ Extract email using NEW API
     public String extractEmail(String token) {
-        return Jwts.parser()                  // ✅ was parserBuilder() — deprecated
+        return Jwts.parser()                  //was parserBuilder() — deprecated
             .verifyWith(getKey())            
             .build()
-            .parseSignedClaims(token)         // ✅ was parseClaimsJws() — deprecated
+            .parseSignedClaims(token)         //was parseClaimsJws() — deprecated
             .getPayload()
             .getSubject();
     }
 
-    // ✅ Validate token using NEW API
+    // Validate token using NEW API
     public boolean validateToken(String token) {
         try {
             Jwts.parser()                    
@@ -61,7 +61,7 @@ public class JwtUtils {
         return false;
     }
 
-    // ✅ Returns SecretKey (not Key) — required by new JJWT API
+    //Returns SecretKey (not Key) — required by new JJWT API
     private SecretKey getKey() {
         return Keys.hmacShaKeyFor(
             jwtSecret.getBytes(StandardCharsets.UTF_8)

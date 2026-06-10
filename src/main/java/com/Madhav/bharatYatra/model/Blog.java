@@ -22,9 +22,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-//══════════════════════════════════════════
+
 //BLOG
-//══════════════════════════════════════════
+
 @Entity
 @Table(name = "blogs")
 @EntityListeners(AuditingEntityListener.class)
@@ -45,7 +45,7 @@ public class Blog {
  @NotBlank
  private String title;
 
- private String category;   // "Featured", "Photography", "Food", etc.
+ private String category; 
 
  @Column(columnDefinition = "LONGTEXT")
  private String content;

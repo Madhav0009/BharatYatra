@@ -18,9 +18,9 @@ import com.Madhav.bharatYatra.service.TouristPlaceService;
 
 import lombok.RequiredArgsConstructor;
 
-//══════════════════════════════════════════════════════
+
 //PLACE CONTROLLER  →  /api/places
-//══════════════════════════════════════════════════════
+
 @RestController
 @RequestMapping("/api/places")
 @RequiredArgsConstructor
