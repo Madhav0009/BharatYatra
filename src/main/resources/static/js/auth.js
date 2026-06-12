@@ -74,15 +74,15 @@ BY.initRegisterPage = function () {
 };
 
 // FORGOT PASSWORD APIs 
-
 BY.sendOtp = (email) =>
-  BY.request(`/api/auth/send-otp?email=${encodeURIComponent(email)}`, { method: "POST" });
+  BY.request(`/auth/send-otp?email=${encodeURIComponent(email)}`, { method: "POST" });
 
 BY.verifyOtp = (email, otp) =>
-  BY.request(`/api/auth/verify-otp?email=${encodeURIComponent(email)}&otp=${encodeURIComponent(otp)}`, { method: "POST" });
+  BY.request(`/auth/verify-otp?email=${encodeURIComponent(email)}&otp=${encodeURIComponent(otp)}`, { method: "POST" });
 
 BY.resetPassword = (email, pass) =>
-  BY.request(`/api/auth/reset-password?email=${encodeURIComponent(email)}&newPassword=${encodeURIComponent(pass)}`, { method: "POST" });
+  BY.request(`/auth/reset-password?email=${encodeURIComponent(email)}&newPassword=${encodeURIComponent(pass)}`, { method: "POST" });
+
 
 //  FORGOT PASSWORD
 
