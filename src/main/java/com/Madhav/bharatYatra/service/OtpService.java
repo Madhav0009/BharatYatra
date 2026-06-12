@@ -54,13 +54,24 @@ public class OtpService {
                 "Thank you,\nBharatYatra Team"
         );
 
-        System.out.println("FROM EMAIL = " + fromEmail); //
-        System.out.println("TO EMAIL = " + toEmail);    //
-        javaMailSender.send(message);
+        try {
+            System.out.println("FROM EMAIL = " + fromEmail);
+            System.out.println("TO EMAIL = " + toEmail);
 
-        System.out.println("OTP sent to: " + toEmail);
+            javaMailSender.send(message);
+
+            System.out.println("OTP sent successfully");
+
+        } catch (Exception e) {
+
+            System.out.println("MAIL ERROR START");
+            e.printStackTrace();
+            System.out.println("ERROR MESSAGE = " + e.getMessage());
+            System.out.println("MAIL ERROR END");
+
+            throw e;
+        }
     }
-
     // GENERATE OTP
     private String generateOtp() {
 
