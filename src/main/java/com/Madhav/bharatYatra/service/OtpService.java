@@ -54,6 +54,8 @@ public class OtpService {
                 "Thank you,\nBharatYatra Team"
         );
 
+        System.out.println("FROM EMAIL = " + fromEmail); //
+        System.out.println("TO EMAIL = " + toEmail);    //
         javaMailSender.send(message);
 
         System.out.println("OTP sent to: " + toEmail);
