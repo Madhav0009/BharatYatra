@@ -42,7 +42,7 @@ public class OtpService {
 
         SimpleMailMessage message = new SimpleMailMessage();
 
-        message.setFrom(fromEmail);
+        message.setFrom("kadam409409@gmail.com");
         message.setTo(toEmail);
 
         message.setSubject("BharatYatra Password Reset OTP");
