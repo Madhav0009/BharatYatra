@@ -67,7 +67,9 @@ public class BlogService {
         return toDTO(blog);
     }
 
-    // GET BLOGS FOR PLACE
+  
+ // GET BLOGS FOR PLACE
+    @Transactional(readOnly = true)
     public Page<BlogDTO> getBlogsForPlace(
             Long placeId,
             int page,

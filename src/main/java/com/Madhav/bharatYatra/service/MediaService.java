@@ -152,6 +152,7 @@ public class MediaService {
         return toDTO(media);
     }
 
+    @Transactional(readOnly = true)
     public Page<MediaDTO> getMedia(
             Long placeId,
             String type,
@@ -190,7 +191,7 @@ public class MediaService {
 
         return uploads.map(this::toDTO);
     }
-
+    
     private MediaDTO toDTO(MediaUpload media) {
 
         return MediaDTO.builder()

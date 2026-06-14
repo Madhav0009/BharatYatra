@@ -76,6 +76,7 @@ public class ReviewService {
         return toDTO(review);
     }
 
+    @Transactional(readOnly = true)
     public Page<ReviewDTO> getReviews(
             Long placeId,
             int page,
