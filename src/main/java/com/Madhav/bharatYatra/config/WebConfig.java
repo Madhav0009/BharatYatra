@@ -2,22 +2,24 @@ package com.Madhav.bharatYatra.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-
-//STATIC FILE SERVING (for uploaded media)
+import java.nio.file.Paths;
 
 @Configuration
-public class WebConfig implements org.springframework.web.servlet.config.annotation.WebMvcConfigurer {
+public class WebConfig implements WebMvcConfigurer {
 
- @Value("${app.upload.dir}")
- private String uploadDir;
+    @Value("${app.upload.dir}")
+    private String uploadDir;
 
- @Override
- public void addResourceHandlers(
-         org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry registry) {
-     registry.addResourceHandler("/files/**")
-         .addResourceLocations("file:" + System.getProperty("user.dir") + "/" + uploadDir);
- }
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+
+        String uploadPath =
+                Paths.get(uploadDir).toAbsolutePath().toUri().toString();
+
+        registry.addResourceHandler("/files/**")
+                .addResourceLocations(uploadPath);
+    }
 }
-
-

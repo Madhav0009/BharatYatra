@@ -120,6 +120,9 @@ public class MediaService {
                 uploadPath.resolve(fileName),
                 StandardCopyOption.REPLACE_EXISTING
         );
+        
+        log.info("Saved file at: {}",
+                uploadPath.resolve(fileName).toAbsolutePath());
 
         String fileUrl =
                 baseUrl + placeId + "/" + fileName;
